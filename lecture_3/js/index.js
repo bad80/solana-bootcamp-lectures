@@ -88,9 +88,11 @@ const main = async () => {
   console.log("Tracker Program", trackerProgramId.toBase58());
   console.log("Counter Program", counterProgramId.toBase58());
 
-  const connection = new Connection("https://api.devnet.solana.com/");
-  let feePayer = new Keypair();
-
+  const connection = new Connection("https://nd-363-017-301.p2pify.com/c8ecc70689bfba81a35ddce4a3e12fee");
+  let feePayer = Keypair.fromSecretKey(
+    Uint8Array.from([8,104,236,10,40,164,121,196,197,167,183,138,142,6,15,147,148,250,50,105,0,22,30,190,25,147,142,96,38,15,192,211,58,27,40,215,246,211,79,173,239,219,33,174,64,41,97,164,123,107,243,240,246,233,56,175,8,6,200,162,91,200,177,244])
+  );
+  
   const counter = new Keypair();
   let counterKey = counter.publicKey;
 
